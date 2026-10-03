@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17251f">
+  <meta name="description" content="YES / NOで進む分岐式の職種適性クイズです。回答はブラウザー内で処理されます。">
+  <title>職種適性クイズ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="site-header">
+      <p class="eyebrow">ROLE &amp; SPECIALTY QUIZ</p>
+      <h1>職種適性クイズ</h1>
+      <p class="intro">質問にYES / NOで答えて、あなたに合う職種を見つけましょう。</p>
+    </header>
+
+    <section id="quiz" class="card" aria-live="polite">
+      <div class="topline">
+        <span id="step-label" class="step-label"></span>
+        <button id="restart-top" class="text-button" type="button">最初から</button>
+      </div>
+      <div class="progress-track" aria-hidden="true"><div id="progress" class="progress-fill"></div></div>
+      <p id="question-id" class="question-id"></p>
+      <h2 id="question-text" class="question-text"></h2>
+      <div class="answers">
+        <button id="yes-button" class="answer-button yes" type="button">YES <span aria-hidden="true">→</span></button>
+        <button id="no-button" class="answer-button no" type="button">NO <span aria-hidden="true">→</span></button>
+      </div>
+      <button id="back-button" class="back-button" type="button">← 前の質問に戻る</button>
+    </section>
+
+    <section id="results" class="card results-card" hidden aria-live="polite">
+      <p class="eyebrow">YOUR RESULTS</p>
+      <h2>回答集計</h2>
+      <p id="result-summary" class="result-summary"></p>
+      <div id="result-list" class="result-list"></div>
+      <div class="result-actions">
+        <button id="restart-result" class="answer-button yes" type="button">もう一度診断する</button>
+        <button id="copy-result" class="secondary-button" type="button">結果をコピー</button>
+      </div>
+      <p id="copy-status" class="copy-status" role="status"></p>
+    </section>
+
+    <footer>このクイズの回答はこのブラウザー内で処理され、サーバーには送信されません。</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
